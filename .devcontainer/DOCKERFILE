@@ -1,0 +1,28 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+# Usamos /workspace como raíz del proyecto dentro de la imagen
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# requirements.txt vive en el root del repo, así que en la imagen será /workspace/requirements.txt
+COPY requirements.txt /workspace/requirements.txt
+
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir gunicorn
+
+# Ahora copiamos TODO el repo al /workspace
+COPY . /workspace
+
+EXPOSE 8080
+ENV PORT=8080
+
+# main.py está en el root del repo → ahora es /workspace/main.py
+CMD ["gunicorn", "-w", "2", "-k", "gthread", "--threads", "8", "-b", "0.0.0.0:8080", "main:app"]

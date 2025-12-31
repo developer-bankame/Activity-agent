@@ -1,0 +1,51 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.python-version
+.venv/
+venv/
+env/
+
+# ---- Environment / Secrets ----
+.env
+.env.*
+!.env.example
+.envrc
+
+# ---- Logs & Coverage ----
+logs/
+*.log
+.coverage
+coverage.xml
+htmlcov/
+
+# ---- Caches / Tools ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ---- Local artifacts generados por agentes ----
+movie_pitches/
+artifacts/
+outputs/
+tmp/
+
+# Service account keys and credentials
+service_account_key.json
+*credentials*.json

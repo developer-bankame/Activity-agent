@@ -1,0 +1,97 @@
+# ========= SO / Miscelánea =========
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========= Python (cachés / binarios) =========
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.egg-info/
+*.egg
+.eggs/
+.mypy_cache/
+.pytype/
+.pyre/
+.tox/
+.nox/
+.dmypy.json
+__pypackages__/
+
+# ========= Entornos virtuales locales =========
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.env/
+
+# ========= Editores / IDE =========
+.vscode/
+.idea/
+.history/
+.spyderproject
+.spyproject
+.ropeproject
+
+# ========= Build / distribución =========
+build/
+dist/
+target/
+site/
+cython_debug/
+
+# ========= Jupyter =========
+.ipynb_checkpoints/
+
+# ========= Git =========
+.git/
+.gitignore
+
+# ========= Logs / artefactos de ejecución =========
+*.log
+*.db
+*.sqlite3
+*.sqlite3-journal
+
+# ========= Secretos / credenciales =========
+*.env
+.env.*
+service_account_key.json
+*credentials*.json
+**/keys/**
+*.pem
+*.p12
+
+# ========= Datos pesados (montarlos como volumen en runtime) =========
+data/
+datasets/
+raw_data/
+*.parquet
+*.feather
+*.csv
+# Si quieres incluir un sample pequeño en la imagen, descomenta la siguiente línea y ajusta el nombre:
+#!data/sample.csv
+
+# ========= Reportes / salidas analíticas (opcionales) =========
+analysis/**/results/
+analysis/**/reports/
+analysis/**/plots/
+analysis/results/
+analysis/reports/
+analysis/plots/
+*_quality_*.json
+*_quality_*.html
+*_null_percentages_*.png
+*_unique_percentages_*.png
+
+# ========= Artefactos del modelo =========
+# Opción B (recomendada para producción): ignora artifacts y móntalos por volumen
+# artifacts/
+# Opción A (si quieres “hornearlos” en la imagen): comenta la línea de arriba para incluir artifacts/
+
+# ========= Docker =========
+# Importante: NO ignores el Dockerfile del Dev Container
+# (No agregues reglas tipo "Dockerfile" que bloqueen .devcontainer/Dockerfile)
