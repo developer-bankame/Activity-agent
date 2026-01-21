@@ -7,7 +7,7 @@
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 
-  "forwardPorts": [8010],
+  "forwardPorts": [8015],
 
   "customizations": {
     "vscode": {
@@ -45,12 +45,12 @@
   "runArgs": [
     "--userns=keep-id",
     "--security-opt=label=disable",
-    "-p", "8010:8010"
+    "-p", "8015:8015"
   ],
 
   "containerEnv": {
     "HOME": "/home/vscode",
-    "PORT": "8010",
+    "PORT": "8015",
     "PYTHONPATH": "/workspace"
   },
 
