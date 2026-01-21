@@ -1,0 +1,13 @@
+version: 1
+roles:
+  - Dueño
+  - Socio
+  - Independiente estructurado
+  - Independiente informal
+  - Empleado dependiente privado - GER
+  - Empleado dependiente privado - ADM
+  - Empleado dependiente privado - AUX
+  - Empleado público
+  - Técnico / operativo
+  - Jornalero / eventual
+  - No definido

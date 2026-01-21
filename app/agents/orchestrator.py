@@ -57,28 +57,17 @@ def make_orchestrator(settings):
 
         fields_y = _read_yaml("fields.yaml")
         roles_y = _read_yaml("roles.yaml")
-        sub_fields_y = _read_yaml("sub_fields.yaml")
-        field_sub_map_y = _read_yaml("field_sub_field_map.yaml")
-        field_role_map_y = _read_yaml("field_role_map.yaml")
-        field_sub_role_map_y = _read_yaml("field_sub_field_role_map.yaml")
 
         tool_context.state["tax_fields"] = fields_y.get("fields", []) or []
         tool_context.state["tax_roles"] = roles_y.get("roles", []) or []
-        tool_context.state["tax_sub_fields"] = sub_fields_y.get("sub_fields", []) or []
-
-        tool_context.state["field_to_sub_fields"] = (field_sub_map_y.get("map", {}) or {})
-        tool_context.state["field_to_roles"] = (field_role_map_y.get("map", {}) or {})
-        tool_context.state["field_sub_to_roles"] = (field_sub_role_map_y.get("map", {}) or {})
 
         # inicializa salidas (útil para debugging / consistencia)
         tool_context.state.setdefault("field", None)
-        tool_context.state.setdefault("sub_field", None)
         tool_context.state.setdefault("role", None)
 
         logger.info(
             "load_taxonomies DONE fields=%d sub_fields=%d roles=%d",
             len(tool_context.state["tax_fields"]),
-            len(tool_context.state["tax_sub_fields"]),
             len(tool_context.state["tax_roles"]),
         )
         return {"status": "success"}
@@ -92,8 +81,7 @@ def make_orchestrator(settings):
           1) Call `fetch_profile` with { client_id } to load:
              employer, sector, activity_declared, and normalized variants into state.
           2) Call `load_taxonomies` once to load:
-             tax_fields, tax_sub_fields, tax_roles,
-             field_to_sub_fields, field_to_roles, field_sub_to_roles.
+             tax_fields, tax_roles.
           3) Do NOT output free text. Finish after tools.
 
         INPUT:

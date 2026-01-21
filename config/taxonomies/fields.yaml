@@ -1,0 +1,25 @@
+version: 1
+fields:
+  - Comercio minorista
+  - Distribución / mayorista
+  - Servicios técnicos
+  - Servicios profesionales
+  - Educación
+  - Salud
+  - Transporte
+  - Producción / manufactura
+  - Sector público
+  - Administrativo / oficina
+  - Gastronomía
+  - Construcción / obra
+  - Agro / ganadería
+  - Servicios personales
+  - Ocio / nocturno / eventos
+  - Eventual
+  - Mixto
+  - Seguridad
+  - Servicios financieros
+  - Estudiante
+  - Servicios comerciales
+  - Publicidad, comunicación y marketing
+  - Indefinido
