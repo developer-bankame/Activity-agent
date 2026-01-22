@@ -84,4 +84,4 @@ logger.info("== URL MAP ==")
 logger.info("%s", app.url_map)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 8010)), debug=False, use_reloader=False)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 8015)), debug=False, use_reloader=False)
