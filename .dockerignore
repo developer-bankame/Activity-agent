@@ -95,3 +95,7 @@ analysis/plots/
 # ========= Docker =========
 # Importante: NO ignores el Dockerfile del Dev Container
 # (No agregues reglas tipo "Dockerfile" que bloqueen .devcontainer/Dockerfile)
+
+# No copiar datos batch al build
+scripts/activities.csv
+scripts/outputs/

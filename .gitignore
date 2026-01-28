@@ -49,3 +49,8 @@ tmp/
 # Service account keys and credentials
 service_account_key.json
 *credentials*.json
+
+
+# Batch inputs/outputs
+scripts/activities.csv
+scripts/outputs/
