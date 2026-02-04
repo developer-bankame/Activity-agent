@@ -41,3 +41,20 @@ CARGOS = {
 }
 
 
+# Probando localmente
+
+# TERMINAL:
+Levanta tu servidor localmente
+python main.py
+
+# Realizar pruebas locales:
+
+curl -i -X POST "http://localhost:8015/agent/scan" \
+  -H "Content-Type: application/json" \
+  -d '{"client_id":4582,"trace_id":"local-e2e"}'
+
+# Usar '.csv' para clasificar n cantidad de clientes:
+
+Batch para activity cluster, modelo de scoring:
+python main.py para inicializar el servidor, luego en una nueva terminal:
+python scripts/run_batch.py --base-url http://localhost:8015 --workers 1 --timeout 180
